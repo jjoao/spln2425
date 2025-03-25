@@ -1,12 +1,4 @@
-for a in {0..30469..250} 
-do 
-curl "https://www.arquivoalbertosampaio.org/OAI-PMH/oai/?verb=ListRecords&resumptionToken=aif::::$a" -o "mvnv-$a.xml" 
-sleep 1 
-done
-
-rg -U '<Bio(?s:.)*?</BiogHist>|<UnitTitle.*?</UnitTitle>' mvnv-*.xml  -o
-
-alguns ARQ recomendados
+Alguns ARQ recomendados
   Famalicao (Alberto Sampaio)
      https://www.arquivoalbertosampaio.org/OAI-PMH/  (30kdoc)
   Ponte do Lima
