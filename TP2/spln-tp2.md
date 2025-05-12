@@ -28,12 +28,13 @@ n = #( 0, 100, 200, ...)
 params = {"verb": "ListRecords",
           "resumptionToken": f"dim///{col}/{n}" }
 r = requests.get(url, params=params).text
-if "noRecordsMatch" not in r:  #( XML += r    Juntar r ao XML )
+if "noRecordsMatch" not in r:  
+  #( XML += r    Juntar r ao XML )
 ```
 
-### 
+No RepositoriUM, o valor do "resumptionToken" tem a seguinte leitura
 
--  onde "dim"   é o "metadataPrefix"  ("dim" é o mais completo)
+-  "dim"   é o "metadataPrefix"  ("dim" é o mais completo)
 -  "col" é a coleção (correspondente ao parametro "Set" do OAI-PMH) ver:
 
   `https://repositorium.sdum.uminho.pt/oai/oai?verb=ListSets`
@@ -44,7 +45,7 @@ if "noRecordsMatch" not in r:  #( XML += r    Juntar r ao XML )
 
 ColDoc.json = XML→Json(OAI.xml) 
 
-Arrumando a informação: Limpando, filtrando, normalizando
+Arrumar a informação: Limpando, filtrando, normalizando
 
 ## Calcular Coleção-treino-similaridades
 
@@ -70,8 +71,9 @@ Estudar heurísticas para guess_sim(d1,d2) usando:
 ## Treinar sentence-transformer 
 
 - com base numa coleção (doc1, doc2, similarity)*
+
 ```
-model = train(BERT, ColTrain)
+modelo = train(BERT, ColTrain)
 ```
 
 ## Usar modelo
